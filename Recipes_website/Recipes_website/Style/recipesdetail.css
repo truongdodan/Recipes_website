@@ -1,0 +1,600 @@
+/* BODY */
+main {
+}
+
+    main a {
+        color: black;
+        text-decoration: none;
+    }
+
+    main ul {
+        list-style: none;
+    }
+/* anchor */
+.anchor-wrapper {
+    margin: 0rem 1.5rem;
+}
+
+    .anchor-wrapper ul li {
+        display: inline-block;
+        opacity: 0.6;
+        margin-top: 0.35rem;
+        font-size: 0.9rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .anchor-wrapper ul li+li:before {
+        padding: 0.5rem;
+        padding-left: 0rem;
+        content: ">";
+    }
+    .anchor-wrapper ul li:last-child > a{
+        font-weight: 550;
+        color: black;
+    }
+    
+
+/* dish infor */
+.infor-wrapper {
+    margin: 1rem 0rem;
+}
+
+.recipe-infor {
+    margin: 1rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+    .recipe-infor h2 {
+        font-size: 2rem;
+    }
+
+    .recipe-infor > * {
+        margin-bottom: 0.25rem;
+    }
+
+.review-infor ul > * {
+    display: inline-block;
+}
+
+.dish-image {
+    width: 100vw;
+    height: 100vw;
+    background-color: #f8f8f8;
+}
+
+    .dish-image > img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+.author {
+    display: flex;
+    margin: 0.5rem 0rem;
+}
+
+.cook-time-infor {
+    display: flex;
+    margin: 0.5rem 0rem;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 2rem;
+    background-color: #ededed;
+    border-radius: 3rem;
+    color: black;
+    font-weight: bold;
+    margin: 0.5rem 0rem;
+    transition: 200ms;
+}
+
+/*unsave button*/
+.save-recipe.btn {
+    margin-bottom: 2rem;
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    background-color: #FFC105;
+    color: white;
+}
+
+    .save-recipe.btn img {
+        content: url('../icon/bookmark_saved.svg');
+    }
+
+    .save-recipe.btn p::after {
+        content: "Lưu công thức";
+    }
+
+/*save button*/
+.save-recipe.btn.active {
+    background-color: #ededed;
+    color: black;
+}
+
+    .save-recipe.btn.active img {
+        content: url('../icon/bookmark.svg');
+    }
+
+    .save-recipe.btn.active p::after {
+        content: "Hủy lưu";
+    }
+
+
+/* old button style for add comment idk man */
+.btn.save {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: fit-content;
+    padding: 0.75rem 2rem;
+    background-color: #FFC105;
+    border-radius: 3rem;
+    color: white;
+    font-weight: bold;
+    margin: 0.5rem 0rem;
+}
+
+.review-number, .author > p, .cook-time-infor > p {
+    opacity: 0.5;
+}
+
+.recipe-infor > div > * {
+    margin-right: 0.5rem;
+}
+
+.summary-description {
+    font-size: 1rem;
+}
+
+.summary-description p {
+    opacity: 0.7;
+}
+
+/* ingredient section */
+.ingredient-wrapper {
+    margin: 3rem 1rem;
+}
+
+    .ingredient-wrapper > ul {
+        margin-top: 0.5rem;
+        list-style: circle;
+        margin: 0.5rem 2rem;
+        opacity: 0.7;
+    }
+
+        .ingredient-wrapper > ul > li {
+            margin: 0.5rem 0rem;
+        }
+
+/* procedure section */
+.procedure-wrapper {
+    margin: 3rem 1rem;
+}
+
+    .procedure-wrapper ol {
+        margin: 0.5rem 2rem;
+        opacity: 0.7;
+    }
+
+        .procedure-wrapper ol li {
+            margin: 1rem 0rem;
+            line-height: 2;
+        }
+
+        .procedure-wrapper ol li pre {
+            font-size: inherit;
+            font-family: inherit;
+            white-space: break-spaces;
+            word-wrap: break-word;
+        }
+
+/* comment section */
+.comment-section {
+    margin: 1rem;
+}
+
+    .comment-section .review-infor {
+        margin: 1rem 0rem;
+    }
+
+.review-infor .star-number h4 {
+    position: relative;
+    top: -2px;
+    font-size: 1.2rem;
+}
+
+.comments ul li {
+    display: inline-block;
+}
+
+.comments li > div {
+    display: flex;
+}
+
+.comments > li {
+    margin-top: 1.5rem;
+}
+
+.comment-infor {
+    flex: 1;
+    min-width: 0;
+}
+
+.comment-infor img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.comment-text {
+    margin-top: 0.35rem;
+    opacity: 0.7;
+}
+
+.comment-image img {
+    width: 7rem;
+    height: 7rem;
+    background-color: #f8f8f8;
+    object-fit: cover;
+}
+
+.comment-btn {
+    margin-top: 1.5rem;
+}
+/* add comment form*/
+.comment-form-wrapper {
+    background-color: rgb(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+    .comment-form-wrapper .comment-form {
+        width: min(90%, 800px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #f4f2f0;
+        padding: 1rem 1.5rem;
+        padding-bottom: 5.5rem;
+        position: relative;
+        margin: 0rem auto;
+        border-radius: 1rem;
+    }
+
+    .comment-form-wrapper .review-infor > ul li {
+        margin: 0.5rem 0rem;
+        margin-right: 1rem;
+    }
+
+    .comment-form-wrapper .review-infor > ul > li img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+.added-comment-image > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.comment-form-wrapper .add-comment-input {
+    width: 100%;
+}
+
+.comment-form-wrapper textarea {
+    padding: 0.5rem;
+    width: 100%;
+    opacity: 0.6;
+}
+
+.added-comment-image > input {
+    display: none;
+}
+
+.added-comment-image > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(50vw, 300px);
+    aspect-ratio: 1/1;
+    background-color: #e1e1e1;
+    min-width: 0;
+    cursor: pointer;
+    margin: 0.5rem auto;
+}
+
+.input-error {
+    color: rgb(255, 69, 69);
+    font-size: 0.85rem;
+    position: absolute;
+    display: none;
+}
+
+.added-comment-btn {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.added-comment-btn > *{
+     display: flex; 
+     width: 100%; 
+    font-weight: 550;
+}
+
+    .added-comment-btn input {
+        flex: 1;
+        border: 1px #e1e1e1 solid;
+        color: #969696;
+        height: 3rem;
+        border-bottom-right-radius: 1rem;
+        cursor: pointer;
+    }
+
+    .added-comment-btn input:first-of-type {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 0rem;
+        color: white;
+        background-color: #FFC105;
+    }
+
+    .added-comment-btn > div {
+        
+    }
+
+/* similar recipe */
+.similar-recipe-wrapper {
+    margin: 3rem 1rem;
+}
+
+.similar-recipe-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-top: 1rem;
+}
+
+    .similar-recipe-list > li {
+        height: min(45vw, 100%);
+        width: min(45vw, 100%);
+        aspect-ratio: 1/1;
+        background-color: #f8f8f8;
+        position: relative;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        transition: 200ms;
+    }
+
+        .similar-recipe-list > li:hover {
+            opacity: 0.7;
+        }
+
+        .similar-recipe-list > li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+.recipe-title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    overflow: hidden;
+}
+
+    .recipe-title .background {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 40%;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .recipe-title p {
+        position: relative;
+        z-index: 3;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin: 1rem;
+        line-height: 1.2;
+    }
+
+
+/* popular catagory */
+.popular-catagory-wraper {
+    margin: 3rem 1rem;
+}
+
+.popular-catagory {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.popular-catagory ul > li {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px #e1e1e1 solid;
+    margin-top: 1rem;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.popular-catagory li {
+    list-style: none;
+}
+
+.popular-catagory a {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/* DESTOP */
+@media (min-width: 1000px) {
+    /* BODY */
+    /* dish infor */
+    .infor-wrapper {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1.5rem;
+    }
+
+        .infor-wrapper .dish-image {
+            width: 600px;
+            height: 600px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background-color: #f8f8f8;
+        }
+
+    .dish-image img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .recipe-infor {
+        flex: 1;
+        margin: 0rem;
+    }
+
+    .btn {
+        width: 15rem;
+    }
+
+    .btn.save {
+        width: 15rem;
+    }
+
+        .btn:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        .btn:active {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+    /* ingredient section */
+    .ingredient-wrapper {
+        margin: 3rem 0rem;
+    }
+
+    /* procedure section */
+    .procedure-wrapper {
+        margin: 3rem 0rem;
+    }
+
+    /* comment section */
+    .comment-section {
+        margin: 3rem 0rem;
+    }
+
+    .comments {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 2rem;
+        row-gap: 1rem;
+    }
+
+    .comments > li {
+        margin-right: 2rem;
+    }
+
+    .comment-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    /* add comment form*/
+    .comment-form-wrapper > .comment-form {
+        padding: 1rem 2rem;
+    }
+
+    .comment-form-wrapper .review-infor > ul > li img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+        .comment-form-wrapper .review-infor > ul > li {
+            margin: 1rem 0rem;
+            margin-right: 2rem;
+        }
+
+        .add-comment-input {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+            padding-bottom: 5rem;
+        }
+
+    .input-error {
+        bottom: 3rem;
+    }
+
+    /* similar recipe */
+    .similar-recipe-wrapper {
+        margin: 3rem 0rem;
+    }
+
+    .similar-recipe-list {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+        row-gap: 2rem;
+    }
+
+    .similar-recipe-list > li {
+        /* width: ; */
+    }
+
+    /* propular-catagory */
+    .popular-catagory-wraper {
+        margin-bottom: 5rem;
+        margin: 3rem 0rem;
+    }
+
+    .popular-catagory {
+        flex-direction: row;
+        gap: 8rem;
+        margin-top: 1rem;
+    }
+
+    .popular-catagory > li {
+        flex: 1;
+    }
+
+    .popular-catagory ul > li {
+        width: auto;
+        font-size: 0.9rem;
+    }
+}
