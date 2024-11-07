@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Recipes_website/Recipes_website/WebForm4.aspx
+/Recipes_website/Recipes_website/WebForm4.aspx.cs
+/Recipes_website/Recipes_website/WebForm4.aspx.designer.cs

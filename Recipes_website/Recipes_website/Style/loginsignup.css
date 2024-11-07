@@ -1,0 +1,154 @@
+/* MAIN */
+/* login */
+
+main {
+    flex: 1;
+    width: min(100%, 500px);
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    opacity: 0.7;
+    position: relative;
+}
+
+    main > div:nth-of-type(-n + 4) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main label {
+        font-weight: bold;
+    }
+
+    main div input {
+        padding: 0.25rem 0.5rem;
+    }
+
+.password-wrapper {
+    position: relative;
+}
+
+/*error message*/
+.error-message, .error-message-signup {
+    color: rgb(255, 69, 69);
+    font-size: 0.85rem;
+    position: absolute;
+    left: 0;
+    bottom: 1.5rem;
+    display: none;
+}
+
+.password-toggle-wrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    color: #aaaaaa;
+}
+
+.sign-in-button input {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    border: none;
+    background-color: #FFC105;
+    border-radius: 3rem;
+    transition: 200ms;
+    font-weight: bold;
+    color: white;
+}
+
+    .sign-in-button input:active {
+        opacity: 0.5;
+    }
+
+.forget-password-wrapper {
+    text-align: center;
+}
+
+    .forget-password-wrapper a {
+        text-decoration: none;
+        color: black;
+        opacity: 0.3;
+        margin: 0 auto;
+        font-weight: normal;
+    }
+
+.sign-in-button {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up-wrapper {
+    text-align: center;
+    font-weight: bold;
+}
+
+    .sign-up-wrapper a {
+        text-align: center;
+        text-decoration: none;
+        color: #FFC105;
+    }
+
+/*sign up successful snackbar*/
+.signup-success-notification {
+    display: none;
+    text-align: center;
+    align-self: center;
+    padding: 1rem 5rem;
+    margin: 0 auto;
+    background-color: #48c13f;
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 550;
+    background-image: url("../icon/success.svg");
+    background-position-y: center;
+    background-position-x: 1rem;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 6rem;
+    z-index: 2;
+}
+
+.signup-success-notification.show {
+    display: block;
+    animation: fadein 500ms, fadeout 500ms 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+    to {
+        top: 6rem;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 6rem;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+/* DESTOP */
+@media (min-width: 1000px) {
+    /* MAIN */
+
+
+
+}
+
+/* TABLET */
+@media (min-width:700px) {
+}

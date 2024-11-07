@@ -42,6 +42,15 @@ namespace Recipes_website
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl keywordList1;
 
         /// <summary>
+        /// showMore1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor showMore1;
+
+        /// <summary>
         /// keyWord2 control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace Recipes_website
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl keywordList2;
+
+        /// <summary>
+        /// showMore2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor showMore2;
 
         /// <summary>
         /// keyWord3 control.
@@ -78,6 +96,15 @@ namespace Recipes_website
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl keywordList3;
 
         /// <summary>
+        /// showMore3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor showMore3;
+
+        /// <summary>
         /// keyWord4 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +121,15 @@ namespace Recipes_website
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl keywordList4;
+
+        /// <summary>
+        /// showMore4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor showMore4;
 
         /// <summary>
         /// newRecipesList control.

@@ -1,0 +1,241 @@
+/* MAIN */
+/* anchor */
+main a {
+    color: black;
+    text-decoration: none;
+}
+
+main ul {
+    list-style: none;
+}
+.anchor-wrapper {
+    margin: 0rem 1.5rem;
+}
+
+    .anchor-wrapper ul li {
+        display: inline-block;
+        opacity: 0.6;
+        margin-top: 0.35rem;
+        font-size: 0.9rem;
+        padding-bottom: 0.5rem;
+    }
+
+        .anchor-wrapper ul li + li:before {
+            padding: 0.5rem;
+            padding-left: 0rem;
+            content: ">";
+        }
+
+        .anchor-wrapper ul li:last-child > a {
+            font-weight: 550;
+            color: black;
+        }
+    
+
+/* filter result */
+
+/*filter type*/
+.recipe-filter-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+
+}
+.recipe-filter-wrapper > select {
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 3px #e1e1e1;
+    border-radius: 0.25rem;
+    
+}
+
+.by-catagory-recipes-wrapper {
+    margin: 0rem 1rem;
+}
+
+    .by-catagory-recipes-wrapper > h2 {
+        margin: 1rem 0rem 2rem 0rem;
+        font-weight: normal;
+        font-size: 1.2rem;
+    }
+
+.by-catagory-recipes-wrapper > h2 > span {
+    font-weight: bold;
+    font-size: 1.875rem;
+}
+
+.by-catagory-recipes-wrapper a {
+    text-decoration: none;
+}
+
+.by-catagory-recipes-wrapper ul {
+    list-style: none;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto, 1fr));
+    grid-gap: 1rem;
+}
+
+    .by-catagory-recipes-wrapper ul li {
+        grid-column-end: span 6;
+        aspect-ratio: 1/1.25;
+        position: relative;
+        border-radius: 0.5rem;
+    }
+
+        .by-catagory-recipes-wrapper ul li img {
+            width: 100%;
+            height: 70%;
+            border-radius: 0.5rem;
+            object-fit: cover;
+        }
+
+.by-catagory-recipes-wrapper .recipe-infor p {
+    width: 100%;
+    /* height: 30%; */
+    background-color: white;
+    padding: 0.25em 0em;
+    color: black;
+    text-align: left;
+    overflow: hidden;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#recipeName {
+    opacity: 0.9;
+}
+
+#recipeAuthor {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+/* recipe list navigation */
+.recipe-list-navigation {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    width: 8rem;
+    padding: 0.75rem;
+    background-color: #ededed;
+    border: none;
+    border-radius: 3rem;
+    opacity: 0.8;
+    font-weight: 550;
+    transition: 200ms;
+    font-size: 0.9rem;
+}
+
+    .btn:hover {
+        opacity: 0.7;
+    }
+
+    .btn:active {
+        opacity: 0.5;
+    }
+
+#pageNumberIndicator {
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+/* popular catagory */
+.popular-catagory-wraper {
+    margin: 3rem 1rem;
+}
+
+.popular-catagory {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+    .popular-catagory ul > li {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px #e1e1e1 solid;
+        margin-top: 1rem;
+        opacity: 0.8;
+        font-size: 0.9rem;
+    }
+
+    .popular-catagory li {
+        list-style: none;
+    }
+
+    .popular-catagory a {
+        color: black;
+        text-decoration: none;
+    }
+
+/* DESTOP */
+@media (min-width: 1000px) {
+    /* MAIN */
+    /* popular new recipes */
+    .by-catagory-recipes-wrapper {
+        margin: 0rem 0rem;
+    }
+
+        .by-catagory-recipes-wrapper > h2 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        }
+
+        .by-catagory-recipes-wrapper ul {
+            grid-gap: 1.75rem;
+        }
+
+            .by-catagory-recipes-wrapper ul li {
+                grid-column-end: span 3;
+            }
+
+                .by-catagory-recipes-wrapper ul li p {
+                    bottom: 0;
+                    padding: 0.5rem 1rem;
+                    color: white;
+                    font-size: 1.25rem;
+                    left: 0;
+                }
+
+    .recipe-list-navigation {
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+        gap: 5rem;
+    }
+
+    /* propular-catagory keyword*/
+    .popular-catagory-wraper {
+        margin-bottom: 5rem;
+        margin: 3rem 0rem;
+    }
+
+    .popular-catagory {
+        flex-direction: row;
+        gap: 8rem;
+        margin-top: 1rem;
+    }
+
+        .popular-catagory > li {
+            flex: 1;
+        }
+
+        .popular-catagory ul > li {
+            width: auto;
+            font-size: 0.9rem;
+        }
+
+}
+
+/* TABLET */
+@media (min-width:700px) {
+}

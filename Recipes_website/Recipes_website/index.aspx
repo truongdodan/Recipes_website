@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HeaderFooter.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Recipes_website.WebForm2" %>
+﻿<%@ Page Title="Trang chủ" Language="C#" MasterPageFile="~/HeaderFooter.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Recipes_website.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="./Style/index.css" />
     <script src="./Script/index.js" defer></script>
@@ -45,7 +45,7 @@
 
                         </ul>
                     </div>
-                    <a href="#">Xem them</a>
+                    <a href="#" runat="server" id="showMore1">Xem thêm</a>
                 </li>
                 <li>
                     <h4 class="keyword" runat="server" id="keyWord2">A popular keyword</h4>
@@ -55,7 +55,7 @@
 
                         </ul>
                     </div>
-                    <a href="#">Xem them</a>
+                    <a href="#" runat="server" id="showMore2">Xem thêm</a>
                 </li>
                 <li>
                     <h4 class="keyword"  runat="server" id="keyWord3">A popular keyword</h4>
@@ -65,7 +65,7 @@
 
                         </ul>
                     </div>
-                    <a href="#">Xem them</a>
+                    <a href="#" runat="server" id="showMore3">Xem thêm</a>
                 </li>
                 <li>
                     <h4 class="keyword"  runat="server" id="keyWord4">A popular keyword</h4>
@@ -75,7 +75,7 @@
                             
                         </ul>
                     </div>
-                    <a href="#">Xem them</a>
+                    <a href="#" runat="server" id="showMore4">Xem thêm</a>
                 </li>
             </ul>
         </div>

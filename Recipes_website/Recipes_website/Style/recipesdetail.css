@@ -91,6 +91,7 @@ main {
     font-weight: bold;
     margin: 0.5rem 0rem;
     transition: 200ms;
+    border: none;
 }
 
 /*unsave button*/
@@ -143,10 +144,16 @@ main {
 
 .review-number, .author > p, .cook-time-infor > p {
     opacity: 0.5;
+    font-weight: 550;
 }
 
 .recipe-infor > div > * {
     margin-right: 0.5rem;
+}
+
+.author a {
+    font-weight: bold;
+    opacity: 0.7;
 }
 
 .summary-description {

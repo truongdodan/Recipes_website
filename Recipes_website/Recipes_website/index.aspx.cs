@@ -1,4 +1,5 @@
-﻿using Recipes_website.App_Codes.Modules;
+﻿using Recipes_website;
+using Recipes_website.App_Code.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace Recipes_website
             loadTopRecipesSection();
 
             //Generate recipe for recommend by keyword section
-            loadRecommendByKeyword();
+            loadRecommendByKeyword("Thịt bò", "Thịt gà", "Rau", "Nấm");
 
             //Generate recipe for recommend recipes section
             loadNewRecipesSection();
@@ -58,17 +59,12 @@ namespace Recipes_website
 
         }
 
-        private void loadRecommendByKeyword()
+        private void loadRecommendByKeyword(string keyword1, string keyword2, string keyword3, string keyword4)
         {
             keywordList1.InnerHtml = "";
             keywordList2.InnerHtml = "";
             keywordList3.InnerHtml = "";
             keywordList4.InnerHtml = "";
-            string keyword1, keyword2, keyword3, keyword4;
-            keyword1 = "Thịt bò";
-            keyword2 = "Thịt gà";
-            keyword3 = "Rau";
-            keyword4 = "Nấm";
 
             //filter list recipe by key word => check if any ingredient match keyword
             List<Recipe> listKeyword1 = recipes.Where(r => r.Ingredients.Any(r2 => r2.ToLower().Contains(keyword1.ToLower()))).Take(6).ToList();
@@ -85,6 +81,7 @@ namespace Recipes_website
                   </li>    
                 ";
             }
+            showMore1.HRef = $"./RecipesBySearch.aspx?searchText={keyword1}";
 
             //do the same things for 2nd
             List<Recipe> listKeyword2 = recipes.Where(r => r.Ingredients.Any(r2 => r2.ToLower().Contains(keyword2.ToLower()))).Take(6).ToList();
@@ -100,10 +97,11 @@ namespace Recipes_website
                   </li>    
                 ";
             }
+            showMore2.HRef = $"./RecipesBySearch.aspx?searchText={keyword2}";
 
             //the 3rd
             List<Recipe> listKeyword3 = recipes.Where(r => r.Ingredients.Any(r2 => r2.ToLower().Contains(keyword3.ToLower()))).Take(6).ToList();
-            keyWord3.InnerText = keyword4;
+            keyWord3.InnerText = keyword3;
             foreach (Recipe r in listKeyword3)
             {
                 keywordList3.InnerHtml += $@"
@@ -115,6 +113,7 @@ namespace Recipes_website
                   </li>    
                 ";
             }
+            showMore3.HRef = $"./RecipesBySearch.aspx?searchText={keyword3}";
 
             //the 4th
             List<Recipe> listKeyword4 = recipes.Where(r => r.Ingredients.Any(r2 => r2.ToLower().Contains(keyword4.ToLower()))).Take(6).ToList();
@@ -130,6 +129,7 @@ namespace Recipes_website
                   </li>    
                 ";
             }
+            showMore4.HRef = $"./RecipesBySearch.aspx?searchText={keyword4}";
 
         }
 

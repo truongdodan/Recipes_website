@@ -68,14 +68,84 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="icon\success.svg" />
+    <Content Include="icon\login.svg" />
+    <Content Include="icon\logout.svg" />
+    <Content Include="icon\write.svg" />
     <Content Include="icon\star_comment_yellow.svg" />
     <Content Include="icon\star_half_comment_yellow.svg" />
     <Content Include="icon\star_half_yellow.svg" />
     <Content Include="icon\star_yellow.svg" />
+    <Content Include="image\1.jfif" />
+    <Content Include="image\10.jfif" />
+    <Content Include="image\11.jfif" />
+    <Content Include="image\12.jfif" />
+    <Content Include="image\13.jfif" />
+    <Content Include="image\14.jfif" />
+    <Content Include="image\15.jfif" />
+    <Content Include="image\16.jpg" />
+    <Content Include="image\17.jpg" />
     <Content Include="image\18.jfif" />
+    <Content Include="image\18.jpg" />
+    <Content Include="image\19.jpg" />
+    <Content Include="image\2.jfif" />
+    <Content Include="image\20.jpg" />
+    <Content Include="image\21.jpg" />
+    <Content Include="image\22.jpg" />
+    <Content Include="image\23.jpg" />
+    <Content Include="image\24.jpg" />
+    <Content Include="image\25.jpg" />
+    <Content Include="image\26.jpg" />
+    <Content Include="image\27.jpg" />
+    <Content Include="image\28.jpg" />
+    <Content Include="image\29.jpg" />
+    <Content Include="image\3.jfif" />
+    <Content Include="image\30.jpg" />
+    <Content Include="image\31.jpg" />
+    <Content Include="image\32.jpg" />
+    <Content Include="image\33.jpg" />
+    <Content Include="image\34.jpg" />
+    <Content Include="image\35.jpg" />
+    <Content Include="image\36.jpg" />
+    <Content Include="image\37.jpg" />
+    <Content Include="image\38.jpg" />
+    <Content Include="image\39.jpg" />
+    <Content Include="image\4.jfif" />
+    <Content Include="image\40.jpg" />
+    <Content Include="image\41.jpg" />
+    <Content Include="image\42.jpg" />
+    <Content Include="image\43.jpg" />
+    <Content Include="image\44.jpg" />
+    <Content Include="image\45.png" />
+    <Content Include="image\46.jpg" />
+    <Content Include="image\47.jpg" />
+    <Content Include="image\48.jpg" />
+    <Content Include="image\49.jpg" />
+    <Content Include="image\5.jfif" />
+    <Content Include="image\50.jpg" />
+    <Content Include="image\51.jpg" />
+    <Content Include="image\52.jpg" />
+    <Content Include="image\53.jpg" />
+    <Content Include="image\54.jpg" />
+    <Content Include="image\55.jpg" />
+    <Content Include="image\56.jpg" />
+    <Content Include="image\57.jpg" />
+    <Content Include="image\58.jpg" />
+    <Content Include="image\59.jpg" />
+    <Content Include="image\6.jfif" />
+    <Content Include="image\7.jfif" />
+    <Content Include="image\8.jfif" />
+    <Content Include="image\9.jfif" />
     <Content Include="image\comment_images\1_1.jfif" />
+    <Content Include="image\user.jfif" />
+    <Content Include="Script\loginsignup.js" />
+    <Content Include="Script\recipesbycatagory.js" />
+    <Content Include="Script\user.js" />
     <Content Include="Style\headerfooter.css" />
     <Content Include="Style\index.css" />
+    <Content Include="Style\loginsignup.css" />
+    <Content Include="Style\recipesbycatagory.css" />
+    <Content Include="Style\recipesbysearch.css" />
     <Content Include="Style\recipesdetail.css" />
     <Content Include="icon\bookmark.svg" />
     <Content Include="icon\bookmark_saved.svg" />
@@ -100,14 +170,20 @@
     <Content Include="Script\headerfooter.js" />
     <Content Include="Script\index.js" />
     <Content Include="Script\recipesdetail.js" />
+    <Content Include="Style\user.css" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
     <Content Include="RecipesDetail.aspx" />
+    <Content Include="RecipesByCatagory.aspx" />
+    <Content Include="RecipesBySearch.aspx" />
+    <Content Include="User.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="SignUp.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\Module\Comment.cs" />
-    <Compile Include="App_Code\Module\Recipe.cs" />
-    <Compile Include="App_Code\Module\User.cs" />
+    <Compile Include="App_Code\Models\Recipe.cs" />
+    <Compile Include="App_Code\Models\User.cs" />
+    <Compile Include="App_Code\Models\Comment.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -133,10 +209,45 @@
     <Compile Include="RecipesDetail.aspx.designer.cs">
       <DependentUpon>RecipesDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RecipesByCatagory.aspx.cs">
+      <DependentUpon>RecipesByCatagory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecipesByCatagory.aspx.designer.cs">
+      <DependentUpon>RecipesByCatagory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecipesBySearch.aspx.cs">
+      <DependentUpon>RecipesBySearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecipesBySearch.aspx.designer.cs">
+      <DependentUpon>RecipesBySearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Datas\Users.json" />
-    <Content Include="App_Datas\Recipes.json" />
+    <Content Include="App_Data\Users.json" />
+    <Content Include="App_Data\Recipes.json" />
     <None Include="packages.config" />
     <Content Include="HeaderFooter.Master" />
     <None Include="Web.Debug.config">

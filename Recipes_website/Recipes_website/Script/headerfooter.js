@@ -19,10 +19,10 @@ function closeNavigation() {
 }
 
 //by ingredient popup
-const popupBtn = document.querySelectorAll(".subNav.popup > li > a")
+const popupBtn = document.querySelectorAll(".subNav.popup > li > a > img")
 popupBtn.forEach(element => {
     element.addEventListener("click", (e) => {
-        e.preventDefault()
+        /*e.preventDefault()*/
 
         const popupContent = element.nextElementSibling
 

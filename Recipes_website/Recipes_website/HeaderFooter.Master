@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HeaderFooter.Master.cs" Inherits="Recipes_website.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HeaderFooter.Master.cs" Inherits="Recipes_website.Site1"%>
 
 <!DOCTYPE html>
 
@@ -12,236 +12,236 @@
     <script src="Script/headerfooter.js" defer></script>
 </head>
 <body>
-    <header>
-    <a class="left logo" href="./index.aspx">
-        <img src="icon/logo.svg" alt="logo">             
-    </a>
-    <div class="right">
-        <div class="navigation-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1m0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1M3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1" />
-            </svg>
-        </div> 
-        <nav>
-            <div class="close-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24">
-                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12" />
+    <form runat="server" enctype="multipart/form-data" method="post">
+        <header>
+        <a class="left logo" href="./index.aspx">
+            <img src="icon/logo.svg" alt="logo">             
+        </a>
+        <div class="right">
+            <div class="navigation-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1m0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1M3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1" />
                 </svg>
-            </div>
-            <ul>
-                <li class="byIngredient">
-                    <a href="#">Theo nguyên liệu</a>
-                    <ul class="subNav popup">
-                        <li>
-                            <a href="#">
-                                <span>Thịt</span>
-                                <img src="icon/upArrow.svg" alt="up arrow">
-                            </a>
-                            <ul class="popup">
-                                <li>
-                                    <a href="#">Thịt lợn</a>
-                                </li>
-                                <li>
-                                    <a href="#">Thịt gà</a>
-                                </li>
-                                <li>
-                                    <a href="#">Thịt bò</a>
-                                </li>
-                                <li>
-                                    <a href="#">Thịt băm</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Cá</span>
-                                <img src="icon/upArrow.svg" alt="up arrow">
-                            </a>
-                            <ul class="popup">
-                                <li>
-                                    <a href="#">Cá chép</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cá trê</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cá trắm</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cá trạch</a>
-                                </li>
-                                <li>
-                                    <a href="#">Lươn</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cá hồi</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cá tuyết</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cá thu</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Rau quả</span>
-                                <img src="icon/upArrow.svg" alt="up arrow">
-                            </a>
-                            <ul class="popup">
-                                <li>
-                                    <a href="">Bắp cải</a>
-                                </li>
-                                <li>
-                                    <a href="">Rau xà lách</a>
-                                </li>
-                                <li>
-                                    <a href="">Khoai tây</a>
-                                </li>
-                                <li>
-                                    <a href="">Nấm</a>
-                                </li>
-                                <li>
-                                    <a href="">Giá đỗ</a>
-                                </li>
-                                <li>
-                                    <a href="">Cải xanh</a>
-                                </li>
-                                <li>
-                                    <a href="">Súp lơ</a>
-                                </li>
-                                <li>
-                                    <a href="">Cà rốt</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Mì</span>
-                                <img src="icon/upArrow.svg" alt="indicate arrow">
-                            </a>
-                            <ul class="popup">
-                                <li>
-                                    <a href="#">Mì gạo</a>
-                                </li>
-                                <li>
-                                    <a href="#">Mì trứng</a>
-                                </li>
-                                <li>
-                                    <a href="#">Mì phở</a>
-                                </li>
-                                <li>
-                                    <a href="#">Spaghetti</a>
-                                </li>
-                                <li>
-                                    <a href="#">Mì ramen</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="byRecipe">
-                    <a href="#">Theo công thức</a>
-                    <ul class="subNav popup">
-                        <li>
-                            <a href="#">Món thịt</a>
-                        </li>
-                        <li>
-                            <a href="#">Món rau</a>
-                        </li>
-                        <li>
-                            <a href="#">Hải sản</a>
-                        </li>
-                        <li>
-                            <a href="#">Món trứng</a>
-                        </li>
-                        <li>
-                            <a href="#">Món cá</a>
-                        </li>
-                        <li>
-                            <a href="#">Bánh mì</a>
-                        </li>
-                        <li>
-                            <a href="#">Đậu phụ</a>
-                        </li>
-                        <li>
-                            <a href="#">Mì</a>
-                        </li>
-                        <li>
-                            <a href="#">Đồ ngọt</a>
-                        </li>
-                        <li>
-                            <a href="#">Đồ uống</a>
-                        </li>
-                        <li>
-                            <a href="#">Canh, súp</a>
-                        </li>
-                        <li>
-                            <a href="#">Món lẩu</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="./index.aspx" class="mobile user">User</a></li>
-            </ul>
-        </nav>
-        <div class="search-box">
-            <form>
+            </div> 
+            <nav>
+                <div class="close-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </div>
+                <ul>
+                    <li class="byIngredient">
+                        <a href="#">Theo nguyên liệu</a>
+                        <ul class="subNav popup">
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Thịt">
+                                    <span>Thịt</span>
+                                    <img src="icon/upArrow.svg" alt="up arrow">
+                                </a>
+                                <ul class="popup">
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Thịt lợn">Thịt lợn</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Thịt gà">Thịt gà</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Thịt bò">Thịt bò</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Thịt băm">Thịt băm</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Cá">
+                                    <span>Cá</span>
+                                    <img src="icon/upArrow.svg" alt="up arrow">
+                                </a>
+                                <ul class="popup">
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Cá+chép">Cá chép</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Cá+trê">Cá trê</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Cá+trắm">Cá trắm</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Cá+trạch">Cá trạch</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Lươn">Lươn</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Cá+hồi">Cá hồi</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Cá+tuyết">Cá tuyết</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Cá+thu">Cá thu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Rau+quả">
+                                    <span>Rau quả</span>
+                                    <img src="icon/upArrow.svg" alt="up arrow">
+                                </a>
+                                <ul class="popup">
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Bắp+cải">Bắp cải</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Rau+xà+lách">Rau xà lách</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Khoai+tây">Khoai tây</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Nấm">Nấm</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Giá+đỗ">Giá đỗ</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Cải+xanh">Cải xanh</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Súp+lơ">Súp lơ</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Cà+rốt">Cà rốt</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Mì">
+                                    <span>Mì</span>
+                                    <img src="icon/upArrow.svg" alt="indicate arrow">
+                                </a>
+                                <ul class="popup">
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Mì+gạo">Mì gạo</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Mì+trứng">Mì trứng</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Mì+phở">Mì phở</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Spaghetti">Spaghetti</a>
+                                    </li>
+                                    <li>
+                                        <a href="./RecipesByCatagory.aspx?ingredient=Mì+ramen">Mì ramen</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="byRecipe">
+                        <a href="#">Theo công thức</a>
+                        <ul class="subNav popup">
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Món+thịt">Món thịt</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Món+rau">Món rau</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Hải+sản">Hải sản</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Món+trứng">Món trứng</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Món+cá">Món cá</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Bánh+mì">Bánh mì</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Đậu+phụ">Đậu phụ</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Mì">Mì</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Đồ+ngọt">Đồ ngọt</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Đồ+uống">Đồ uống</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Canh+súp">Canh, súp</a>
+                            </li>
+                            <li>
+                                <a href="./RecipesByCatagory.aspx?ingredient=Món+lẩu">Món lẩu</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><asp:LinkButton runat="server" ID="userMobile" CssClass= "mobile user" OnClick="checkUser">Tài khoản</asp:LinkButton></li>
+                </ul>
+            </nav>
+            <div class="search-box">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15.5 14H14.71L14.43 13.73C15.444 12.5541 16.0012 11.0527 16 9.5C16 8.21442 15.6188 6.95772 14.9046 5.8888C14.1903 4.81988 13.1752 3.98676 11.9874 3.49479C10.7997 3.00282 9.49279 2.87409 8.23192 3.1249C6.97104 3.3757 5.81285 3.99477 4.90381 4.90381C3.99477 5.81285 3.3757 6.97104 3.1249 8.23192C2.87409 9.49279 3.00282 10.7997 3.49479 11.9874C3.98676 13.1752 4.81988 14.1903 5.8888 14.9046C6.95772 15.6188 8.21442 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="#AAAAAA"/>
                     </svg>
-            
-                <input type="text" name="searchText" value="" placeholder="Hãy thử nhập “thịt gà”">
-            </form>
+                <asp:TextBox ID="searchAspTextBox" runat="server" placeholder="Hãy thử nhập 'thịt gà'" OnTextChanged="searchAspTextBox_TextChanged"></asp:TextBox>
+            </div>
+            <asp:LinkButton runat="server" ID="userDestop" CssClass="user" OnClick="checkUser">
+                <img src="./icon/login.svg" alt="user image" runat="server" id="userImage" style="opacity: 0.5;">
+            </asp:LinkButton>
         </div>
-        <a href="./index.aspx" class="user">
-            <img src="image/user.png" alt="user image">
-        </a>
-    </div>
-</header>
-    <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
-    </asp:ContentPlaceHolder>
-    <footer>
-    <div class="line"></div>
-    <div class="above">
-        <div class="logo">
-            <a href="#"><img src="icon/logo.svg" alt="logo"></a>
-            <div class="slogan">Đồng hành cùng bạn trong mỗi bữa ăn.</div>
-        </div>
-        <div class="footer-navigation">
-            <div>Điều hướng</div>
-            <ul>
-                <li><a href="#">Banner</a></li>
-                <li><a href="#">Top món trong ngày</a></li>
-                <li><a href="#">Gợi ý theo từ khóa</a></li>
-                <li><a href="#">Các công thức mới</a></li>
-                <li><a href="#">Các từ khóa nổi bật</a></li>
-            </ul>
-        </div>
-        <div class="infor">
-            <div>Thông tin</div>
-            <ul>
-                <li><a href="#">Điều khoản</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Chính sách</a></li>
-                <li><a href="#">Liên hệ</a></li>
-                <li><a href="#">Trợ giúp</a></li>
-            </ul>
-        </div>
-        <div class="follow-us">
-            <div>Theo dõi thêm tại</div>
-            <div class="social-media">
-                <a href="#"><img src="icon/facebook.svg" alt="facebook"></a>
-                <a href="#"><img src="icon/pinterest.svg" alt="pinterest"></a>
-                <a href="#"><img src="icon/youtube.svg" alt="youtube"></a>
-                <a href="#"><img src="icon/instagram2.svg" alt="instagram2"></a>
+    </header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer>
+        <div class="line"></div>
+        <div class="above">
+            <div class="logo">
+                <a href="#"><img src="icon/logo.svg" alt="logo"></a>
+                <div class="slogan">Đồng hành cùng bạn trong mỗi bữa ăn.</div>
+            </div>
+            <div class="footer-navigation">
+                <div>Điều hướng</div>
+                <ul>
+                    <li><a href="#">Banner</a></li>
+                    <li><a href="#">Top món trong ngày</a></li>
+                    <li><a href="#">Gợi ý theo từ khóa</a></li>
+                    <li><a href="#">Các công thức mới</a></li>
+                    <li><a href="#">Các từ khóa nổi bật</a></li>
+                </ul>
+            </div>
+            <div class="infor">
+                <div>Thông tin</div>
+                <ul>
+                    <li><a href="#">Điều khoản</a></li>
+                    <li><a href="#">Dịch vụ</a></li>
+                    <li><a href="#">Chính sách</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Trợ giúp</a></li>
+                </ul>
+            </div>
+            <div class="follow-us">
+                <div>Theo dõi thêm tại</div>
+                <div class="social-media">
+                    <a href="#"><img src="icon/facebook.svg" alt="facebook"></a>
+                    <a href="#"><img src="icon/pinterest.svg" alt="pinterest"></a>
+                    <a href="#"><img src="icon/youtube.svg" alt="youtube"></a>
+                    <a href="#"><img src="icon/instagram2.svg" alt="instagram2"></a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="copyright">
-        <div class="line"></div>
-        Bản quyền thuộc© DIO_Cor
-    </div>
-</footer>
+        <div class="copyright">
+            <div class="line"></div>
+            <p>Bản quyền thuộc© <a href="#">DIO_Cor</a></p>
+            <div class="line"></div>
+        </div>
+    </footer>
+    </form>
 </body>
 </html>

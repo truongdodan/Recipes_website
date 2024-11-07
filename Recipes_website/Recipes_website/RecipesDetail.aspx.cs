@@ -1,4 +1,4 @@
-﻿using Recipes_website.App_Codes.Modules;
+﻿using Recipes_website.App_Code.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -42,6 +42,9 @@ namespace Recipes_website
                         <li><a href=""./RecipesDetail.aspx?id={currentRecipe.Id}"">{currentRecipe.Name}</a></li>
                     ";
 
+                    //mark if recipe is saved by user
+                    checkIfRecipeIsSaved();
+
                     //load rating icon type - star? star yellow? half star?
                     ratingFileType = loadRatingIcon(currentRecipe.ReviewStar);
 
@@ -62,6 +65,17 @@ namespace Recipes_website
 
                 //load similar recipe section
                 loadSimilarRecipes();
+            }
+        }
+
+        private void checkIfRecipeIsSaved()
+        {
+            User user = (User)Session["User"];
+            if (user == null) return;
+
+            if(user.SavedRecipes.Any(sr => sr == currentRecipe.Id))
+            {
+                saveAspLinkButton.CssClass = "save-recipe btn active";
             }
         }
 
@@ -112,6 +126,7 @@ namespace Recipes_website
                 </div>
             ";*/
 
+
             dishImage.InnerHtml = "";
             dishTitle.InnerHtml = "";
             reviewInforInforSection.InnerHtml = "";
@@ -134,7 +149,7 @@ namespace Recipes_website
                     <li><img src=""./icon/{ratingFileType[2]}"" alt=""rating star""></li>
                     <li><img src=""./icon/{ratingFileType[3]}"" alt=""rating star""></li>
                     <li><img src=""./icon/{ratingFileType[4]}"" alt=""rating star""></li>
-                    <li class=""star-number""><h4>{currentRecipe.ReviewStar}</h4></li>
+                    <li class=""star-number""><h4>{Math.Round(currentRecipe.ReviewStar, 1)}</h4></li>
                 </ul>
                 <p class=""review-number"">({currentRecipe.ReviewCount} phản hồi)</p>
             ";
@@ -142,7 +157,7 @@ namespace Recipes_website
             authorInfor.InnerHtml = $@"
                 <img src=""./icon/user.svg"" alt=""author icon"">
                 <p>Đăng bởi: </p>
-                <a href=""#"">{currentRecipe.AuthorId}</a>
+                <a href=""./User.aspx?id={currentRecipe.AuthorId}"">{App_Code.Models.User.findUserById(currentRecipe.AuthorId).Name}</a>
             ";
 
             cookTime.InnerHtml = $@"
@@ -224,7 +239,7 @@ namespace Recipes_website
                     <li><img src=""./icon/{ratingFileType[2]}"" alt=""rating star""></li>
                     <li><img src=""./icon/{ratingFileType[3]}"" alt=""rating star""></li>
                     <li><img src=""./icon/{ratingFileType[4]}"" alt=""rating star""></li>
-                    <li class=""star-number""><h4>{currentRecipe.ReviewStar}</h4></li>
+                    <li class=""star-number""><h4>{Math.Round(currentRecipe.ReviewStar, 1)}</h4></li>
                 </ul>
                 <p class=""review-number"">({currentRecipe.ReviewCount} phản hồi)</p>
             ";
@@ -240,7 +255,7 @@ namespace Recipes_website
             {
                 string[] userRatingFileType = loadRatingIcon(c.ReviewStar);
 
-                if (c.ImagePath != null)
+                if (c.ImagePath != null && c.ImagePath != "")
                 {
                     commentImage = $@"
                         <div class=""comment-image"">
@@ -318,51 +333,80 @@ namespace Recipes_website
         {
             currentRecipe = (Recipe)Session["CurrentRecipe"];
 
-            int commentSize = currentRecipe.ReviewCount;
-            int moreComments = (int)Session["VisibledComments"];
-            moreComments += 4;
-            Session["VisibledCommented"] = moreComments;
+            int moreComment = (int)Session["VisibledComments"] + 4;
 
-            loadCommentSection(moreComments, currentRecipe);
+            loadCommentSection(moreComment, currentRecipe);
+            Session["VisibledComments"] = moreComment;
 
-            if (moreComments >= commentSize) hideComment.Visible = true;
+
+            if (currentRecipe.Comments.Count <= 4 || (int)Session["VisibledComments"] <= 4) hideComment.Visible = false;
+            else hideComment.Visible = true;
+        }
+
+        protected void modifySavedRecipes(string action, int currentRecipeId)
+        {
+            if(action.Equals("+"))  //add recipe to saved recipe list
+            {
+                List<User> users = App_Code.Models.User.getUsers();
+                User user = (User)Session["User"];
+                user.SavedRecipes.Add(currentRecipeId);
+
+                int currentUserIndex = users.FindIndex(r => r.Id == user.Id);
+                users[currentUserIndex] = user; //replace the user with new saved recipe
+                App_Code.Models.User.saveUsers(users);
+            }
+            else if(action.Equals("-"))
+            {
+                List<User> users = App_Code.Models.User.getUsers();
+                User user = (User)Session["User"];
+                user.SavedRecipes.RemoveAll(r => r == currentRecipeId);
+
+                int currentUserIndex = users.FindIndex(r => r.Id == user.Id);
+                users[currentUserIndex] = user; //replace the user with new saved recipe
+                App_Code.Models.User.saveUsers(users);
+            }
+
+
         }
 
         protected void saveAspLinkButton_Click(object sender, EventArgs e)
         {
             if (Session["User"] == null) //cant comment if user havent sign in
             {
-                Response.Redirect("./index.aspx");
+                Response.Redirect("./Login.aspx");
                 return;
             }
+
 
             currentRecipe = (Recipe)Session["CurrentRecipe"];
 
             if (saveAspLinkButton.CssClass.Contains("active"))
             {
                 saveAspLinkButton.CssClass = "save-recipe btn";
-                lol.InnerText = "Removed";
+                modifySavedRecipes("-", currentRecipe.Id);      //remove recipe from save
                 return;
             }
 
-            saveAspLinkButton.CssClass = "save-recipe btn active";
-            lol.InnerText = currentRecipe.Id.ToString() + " Saved ";
+            saveAspLinkButton.CssClass = "save-recipe btn active";  //mark button active
+            modifySavedRecipes("+", currentRecipe.Id);      //add recipe from save
+
         }
 
         protected void submitCommentAspButton_Click(object sender, EventArgs e)
         {
             if (Session["User"] == null) //cant comment if user havent sign in
             {
-                Response.Redirect("./index.aspx");
+                Response.Redirect("./Login.aspx");
                 return;
             }
 
+            recipes = (List<Recipe>)Session["Recipes"];
             currentRecipe = (Recipe)Session["CurrentRecipe"];
-
+            User currentUser = (User)Session["User"];
             Comment newComment = new Comment();
-            string userName;
+            string userName = currentUser.Name;
             int reviewStar = int.Parse(Request.Form["reviewStarCounter"]);
-            string commentImagePath;
+            string commentImagePath = "";
             string commentText = Request.Form["addCommentText"];
 
             //save comment image and get COMMENT FILE PATH
@@ -380,10 +424,24 @@ namespace Recipes_website
                 commentImagePath = $"./image/comment_images/{newFileName}";
             }
 
-            
-            //test
-            Response.Write($"<script> alert('{reviewStar}     text: {commentText}') </script>");
+            //save new comment
+            newComment.UserName = userName;
+            newComment.ReviewStar = reviewStar;
+            newComment.ImagePath = commentImagePath;
+            newComment.CommentText = commentText;
 
+            currentRecipe.Comments.Add(newComment);
+
+            //update infor
+            currentRecipe.ReviewStar = ((currentRecipe.ReviewStar*(currentRecipe.ReviewCount - 1)) + reviewStar) / currentRecipe.ReviewCount;   //update review star
+            currentRecipe.ReviewCount = currentRecipe.Comments.Count();    //update review count
+
+            //save back recipe contains comment
+            int modifiedRecipeIndex = recipes.FindIndex(r => r.Id == currentRecipe.Id);
+            recipes[modifiedRecipeIndex] = currentRecipe;
+            Recipe.saveRecipes(recipes);
+
+            Page_Load(sender, e);
 
         }
     }
